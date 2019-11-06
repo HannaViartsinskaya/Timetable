@@ -3,7 +3,7 @@
 Web application to view and create timetables
 ## Main page
 <img width="483" alt="indexP" src="https://user-images.githubusercontent.com/22415059/68312326-2d74d980-00b3-11ea-915b-11f0053f56bc.PNG">
-where user can choose:
+
 ## add course
 <img width="772" alt="add" src="https://user-images.githubusercontent.com/22415059/68312686-b855d400-00b3-11ea-888f-b5a3748b5409.PNG">
 ## see all courses for group->edit courses
