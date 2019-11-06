@@ -27,21 +27,29 @@
 </h1>
 
 <table id="timetable2">
-    <tr>
+
         <%
-            List<TimetableBean> answerM =(ArrayList<TimetableBean>) request.getAttribute("tMondayTeacher");
+            List<TimetableBean> answerM =(ArrayList<TimetableBean>) session.getAttribute("tMondayTeacher");
+
+            if(!answerM.isEmpty()){
+    %>
+    <tr id="nonBorder"><td><%="Monday"%></td></tr>
+    <%}%>
+    <%
             for(int i = 0; i< answerM.size(); i++){
 
         %>
         <td><%=answerM.get(i).toStringWithGroup()+"<br>"%></td></tr>
     <%}%>
-
-
-    </tr>
 </table>
 <table id="timetable2">
     <%
-        List<TimetableBean> answerT =(ArrayList<TimetableBean>) request.getAttribute("tTuesdayTeacher");
+        List<TimetableBean> answerT =(ArrayList<TimetableBean>) session.getAttribute("tTuesdayTeacher");
+        if(!answerT.isEmpty()){
+    %>
+    <tr id="nonBorder"><td><%="Tuesday"%></td></tr>
+    <%}%>
+     <%
         for(int i = 0; i< answerT.size(); i++){
 
     %>
@@ -50,8 +58,13 @@
 </table>
 <table id="timetable2">
     <%
-        List<TimetableBean> answerW =(ArrayList<TimetableBean>) request.getAttribute("tWednesdayTeacher");
-        for(int i = 0; i< answerW.size(); i++){
+        List<TimetableBean> answerW =(ArrayList<TimetableBean>) session.getAttribute("tWednesdayTeacher");
+        if(!answerW.isEmpty()){
+    %>
+    <tr id="nonBorder"><td><%="Wednesday"%></td></tr>
+    <%}%>
+    <%
+    for(int i = 0; i< answerW.size(); i++){
 
     %>
     <tr><td><%=answerW.get(i).toStringWithGroup()+"<br>"%></td></tr>
@@ -59,8 +72,13 @@
 </table>
 <table id="timetable2">
     <%
-        List<TimetableBean> answerTh =(ArrayList<TimetableBean>) request.getAttribute("tThursdayTeacher");
-        for(int i = 0; i< answerTh.size(); i++){
+        List<TimetableBean> answerTh =(ArrayList<TimetableBean>) session.getAttribute("tThursdayTeacher");
+        if(!answerTh.isEmpty()){
+    %>
+    <tr id="nonBorder"><td><%="Thursday"%></td></tr>
+    <%}%>
+    <%
+    for(int i = 0; i< answerTh.size(); i++){
 
     %>
     <tr><td><%=answerTh.get(i).toStringWithGroup()+"<br>"%></td></tr>
@@ -68,8 +86,13 @@
 </table>
 <table id="timetable2">
     <%
-        List<TimetableBean> answerFr =(ArrayList<TimetableBean>) request.getAttribute("tFridayTeacher");
-        for(int i = 0; i< answerFr.size(); i++){
+        List<TimetableBean> answerFr =(ArrayList<TimetableBean>) session.getAttribute("tFridayTeacher");
+        if(!answerFr.isEmpty()){
+    %>
+    <tr id="nonBorder"><td><%="Friday"%></td></tr>
+    <%}%>
+    <%
+    for(int i = 0; i< answerFr.size(); i++){
 
     %>
     <tr><td><%=answerFr.get(i).toStringWithGroup()+"<br>"%></td></tr>
@@ -77,8 +100,13 @@
 </table>
 <table id="timetable2">
     <%
-        List<TimetableBean> answerSa =(ArrayList<TimetableBean>) request.getAttribute("tSaturdayTeacher");
-        for(int i = 0; i< answerSa.size(); i++){
+        List<TimetableBean> answerSa =(ArrayList<TimetableBean>) session.getAttribute("tSaturdayTeacher");
+        if(!answerSa.isEmpty()){
+    %>
+    <tr id="nonBorder"><td><%="Saturday"%></td></tr>
+    <%}%>
+    <%
+    for(int i = 0; i< answerSa.size(); i++){
 
     %>
     <tr><td><%=answerSa.get(i).toStringWithGroup()+"<br>"%></td></tr>
@@ -86,8 +114,13 @@
 </table>
 <table id="timetable2">
     <%
-        List<TimetableBean> answerSu =(ArrayList<TimetableBean>) request.getAttribute("tSundayTeacher");
-        for(int i = 0; i< answerSu.size(); i++){
+        List<TimetableBean> answerSu =(ArrayList<TimetableBean>) session.getAttribute("tSundayTeacher");
+        if(!answerSu.isEmpty()){
+    %>
+    <tr id="nonBorder"><td><%="Sunday"%></td></tr>
+    <%}%>
+    <%
+    for(int i = 0; i< answerSu.size(); i++){
 
     %>
     <tr><td><%=answerSu.get(i).toStringWithGroup()+"<br>"%></td></tr>

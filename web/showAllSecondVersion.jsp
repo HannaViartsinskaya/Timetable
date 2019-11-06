@@ -78,7 +78,12 @@
 <table id="timetable2">
     <%
         List<TimetableBean> answerSa =(ArrayList<TimetableBean>) session.getAttribute("tSaturday");
-        for(int i = 0; i< answerSa.size(); i++){
+        if(!answerSa.isEmpty()){
+    %>
+    <tr id="nonBorder"><td><%="Saturday"%></td></tr>
+    <%}%>
+
+       <% for(int i = 0; i< answerSa.size(); i++){
 
     %>
     <tr><td><%=answerSa.get(i).toString()+"<br>"%></td></tr>
@@ -87,6 +92,11 @@
 <table id="timetable2">
     <%
         List<TimetableBean> answerSu =(ArrayList<TimetableBean>) session.getAttribute("tSunday");
+        if(!answerSu.isEmpty()){
+    %>
+        <tr id="nonBorder"><td><%="Sunday"%></td></tr>
+    <%}%>
+    <%
         for(int i = 0; i< answerSu.size(); i++){
 
     %>

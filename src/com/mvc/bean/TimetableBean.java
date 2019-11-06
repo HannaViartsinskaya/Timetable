@@ -101,13 +101,11 @@ public class TimetableBean {
     @Override
     public String toString() {
         return
-                 timeBeggin  +
-                " - " + timeEnd  +
-                " " + day +
-
-                " subject: " + subject +
+                "<strong>"+ timeBeggin  +
+                " - " + timeEnd  +"</strong>"+" "+
+                 subject +
                 " "+ teacher  +
-                " lokal: " + lokal ;
+                        "<strong>"+ " lokal: " +"</strong>"+ lokal ;
     }
 
     public String toStringWithGroup() {

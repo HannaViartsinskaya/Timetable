@@ -3,7 +3,13 @@ body
 {
 padding-top: 3%;
 }
-
+strong{
+    color:#3CBC8D;
+    font-weight: bolder;
+}
+#center{
+    margin-top: 1%;
+}
 h1
 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -33,13 +39,7 @@ table tr:not(:first-child){
     cursor: pointer;transition: all .25s ease-in-out;
 }
 table tr:not(:first-child):hover{background-color: #ddd;}
-/* Styles relating to the table */
-/*#timetable*/
-/*{*/
-/*    border-collapse: collapse;*/
-/*    margin: 0 auto;*/
-/*    display: inline;*/
-/*}*/
+
 #btnAdd {
     cursor: pointer;
     background-color: #3CBC8D;
@@ -71,8 +71,15 @@ select{
     border: 2px solid #3CBC8D;
     border-radius: 4px;
 }
+.indBtn {
+    width: 150px;
+}
+#indexPage td,th
+{
+    width: 200px;
+}
 #alignSelect{
-    width:35%;
+    width:45%;
     text-align:center;
     margin:0 auto;
 }
@@ -88,30 +95,21 @@ select{
     vertical-align: middle;
     font-family: Helvetica, sans-serif;
 }
+ #nonBorder td,th
+{
+     background: rgba(60, 188, 141, 0.25);
+     color: #102027;
+     font-weight: bolder;
+}
 #timetable td, th
 {
-    width: 100px;
+    width: 200px;
     height: 50px;
     border: 2px solid #3CBC8D;
     text-align: center;
     vertical-align: middle;
     font-family: Helvetica, sans-serif;
 }
-/*#indexPage td,th{*/
-/*    text-align: center;*/
-/*    vertical-align: middle;*/
-/*}*/
-/*#timetable th*/
-/*{*/
-/*    background-color: #D3D3D3;*/
-/*}*/
-
-/*#timetable td*/
-/*{*/
-/*    cursor: pointer;*/
-/*}*/
-
-/* Styles used within table cells */
 .save_entry
 {
     margin-top: 10px;
@@ -122,7 +120,7 @@ select{
     font-size: 75%;
 }
 
-/* Styles used for navigation */
+
 #button_container
 {
     text-align: center;
@@ -163,7 +161,7 @@ input[type=reset] {
 }
 #timetable2 td, th
 {
-    width: 100px;
+    width: 200px;
     height: 50px;
     border: 2px solid #3CBC8D;
     text-align: center;
@@ -176,7 +174,7 @@ input[type=reset] {
     margin: 10px 0;
     counter-reset: flag;
     color: black;
-    box-shadow: 0 0 2px #aaa;
+    box-shadow: 0 0 2px #838383;
 }
 
 .breadcrumbs a {
@@ -200,7 +198,7 @@ input[type=reset] {
     width: 36px;
     height: 36px;
     background: white;
-    box-shadow: 1px 1px 0 1px #ddd;
+    box-shadow: 1px 1px 0 1px #c6c6c6;
     border-radius: 50px 0 0 0;
     transform: rotate(-45deg) scale(0.73);
     transition: all 0.5s;
@@ -221,7 +219,7 @@ input[type=reset] {
     top: 8px;
     left: 30px;
     line-height: 20px;
-    box-shadow: 0 0 2px #ccc;
+    box-shadow: 0 0 2px #838383;
     width: 20px; background-color: white;
     border-radius: 50%;
 }

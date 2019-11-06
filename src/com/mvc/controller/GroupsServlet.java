@@ -1,6 +1,7 @@
 package com.mvc.controller;
 
 import com.mvc.bean.TimetableBean;
+import com.mvc.comparator.TimetableComparator;
 import com.mvc.dao.TimetableDAO;
 
 import javax.servlet.ServletException;
@@ -16,6 +17,7 @@ import java.util.List;
 @WebServlet(name = "GroupsServlet")
 public class GroupsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        TimetableComparator timetableComparator=new TimetableComparator();
         String timeBegin=request.getParameter("timeBegin");
         String groupNameFromUser = request.getParameter("groupList");
         TimetableBean timetableBean = new TimetableBean();
@@ -23,7 +25,7 @@ public class GroupsServlet extends HttpServlet {
         TimetableDAO timetableDAO = new TimetableDAO();
         List<TimetableBean> allTimetable = new ArrayList<>();
         allTimetable = timetableDAO.allLecturesForGroup(timetableBean);
-
+        allTimetable.sort(timetableComparator);
         HttpSession session=request.getSession();
 
         List<TimetableBean> timetableMonday = new ArrayList<>();

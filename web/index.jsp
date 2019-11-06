@@ -35,7 +35,7 @@
       <option>Kosmetyka(4semestr)</option>
     </select>
    </td>
-    <td><button type="submit" name="SendGroup">Submit</button></td>
+    <td><button class="indBtn" type="submit" name="SendGroup">Submit</button></td>
     </tr>
   </table>
 </div>
@@ -43,16 +43,16 @@
 
   <form class="form" action="PrintTimetableForTeacherServlet" method="post">
       <div id="alignSelect">
-      <table>
+      <table id="indexPage">
           <tr>
               <td><h3>Teacher's surname</h3></td>
               <td><input type="text" name="teacher" id="teacher"></td>
-              <td><button type="submit" name="SendTeacher">Get timetable</button></td>
+              <td><button class="indBtn"  type="submit" name="SendTeacher">Get timetable</button></td>
           </tr>
       </table>
       </div>
   </form>
-  <h2>Add course in timetable</h2>
+  <h2>Add course to timetable</h2>
 <div id="center">
   <a href="/addItem.jsp"  >
     <button id="btnAdd">Add</button>
