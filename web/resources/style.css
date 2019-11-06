@@ -1,0 +1,235 @@
+/* General Styles */
+body
+{
+padding-top: 3%;
+}
+
+h1
+{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    size: 30px!important;
+    text-rendering: optimizelegibility;
+    text-align: center;
+    padding-left: 14px;
+    color:#263238;
+    font-weight: lighter;
+}
+h2
+{
+    padding-top: 1%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    size: 20px!important;
+    text-rendering: optimizelegibility;
+    text-align: center;
+    padding-left: 14px;
+    color:#102027;
+    font-weight: bolder;
+
+}
+h3{
+    color: #37474f;
+}
+table tr:not(:first-child){
+    cursor: pointer;transition: all .25s ease-in-out;
+}
+table tr:not(:first-child):hover{background-color: #ddd;}
+/* Styles relating to the table */
+/*#timetable*/
+/*{*/
+/*    border-collapse: collapse;*/
+/*    margin: 0 auto;*/
+/*    display: inline;*/
+/*}*/
+#btnAdd {
+    cursor: pointer;
+    background-color: #3CBC8D;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+button{
+    cursor: pointer;
+    background-color: #3CBC8D;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+input[type=text] {
+    border: 2px solid #3CBC8D;
+    border-radius: 4px;
+}
+select{
+    align-content: center;
+    border: 2px solid #3CBC8D;
+    border-radius: 4px;
+}
+#alignSelect{
+    width:35%;
+    text-align:center;
+    margin:0 auto;
+}
+#center{
+    text-align: center;
+}
+#timetable1 td, th
+{
+    width: 100px;
+    height: 50px;
+    border: 2px solid #3CBC8D;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Helvetica, sans-serif;
+}
+#timetable td, th
+{
+    width: 100px;
+    height: 50px;
+    border: 2px solid #3CBC8D;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Helvetica, sans-serif;
+}
+/*#indexPage td,th{*/
+/*    text-align: center;*/
+/*    vertical-align: middle;*/
+/*}*/
+/*#timetable th*/
+/*{*/
+/*    background-color: #D3D3D3;*/
+/*}*/
+
+/*#timetable td*/
+/*{*/
+/*    cursor: pointer;*/
+/*}*/
+
+/* Styles used within table cells */
+.save_entry
+{
+    margin-top: 10px;
+}
+
+.room
+{
+    font-size: 75%;
+}
+
+/* Styles used for navigation */
+#button_container
+{
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 21px;
+    padding-left: 14px;
+}
+input[type=submit] {
+    cursor: pointer;
+    background-color: #3CBC8D;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+input[type=reset] {
+    cursor: pointer;
+    background-color: #f44336;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+#hiddTable{
+    margin-top: 2%;
+}
+#timetable2
+{
+    border-collapse: collapse;
+    margin: 0 auto;
+    display: inline;
+}
+#timetable2 td, th
+{
+    width: 100px;
+    height: 50px;
+    border: 2px solid #3CBC8D;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Helvetica, sans-serif;
+}
+
+.breadcrumbs {
+    display: inline-block;
+    margin: 10px 0;
+    counter-reset: flag;
+    color: black;
+    box-shadow: 0 0 2px #aaa;
+}
+
+.breadcrumbs a {
+    position: relative;
+    float: left;
+    padding-left: 60px;
+    padding-right: 10px;
+    text-decoration: none;
+    line-height: 36px;
+    color: black;
+    background: white;
+    transition: all 0.5s;
+}
+
+.breadcrumbs a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -18px;
+    z-index: 1;
+    width: 36px;
+    height: 36px;
+    background: white;
+    box-shadow: 1px 1px 0 1px #ddd;
+    border-radius: 50px 0 0 0;
+    transform: rotate(-45deg) scale(0.73);
+    transition: all 0.5s;
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:hover::after,
+.breadcrumbs a.active,
+.breadcrumbs a.active::after{
+    background: #3CBC8D;
+}
+
+.breadcrumbs a::before {
+    text-align: center;
+    content:"  " counter(flag);
+    counter-increment: flag;
+    position: absolute;
+    top: 8px;
+    left: 30px;
+    line-height: 20px;
+    box-shadow: 0 0 2px #ccc;
+    width: 20px; background-color: white;
+    border-radius: 50%;
+}
+
+.breadcrumbs a:first-child {
+    padding-left: 46px;
+}
+
+.breadcrumbs a:first-child::before {
+    left: 14px;
+}
