@@ -3,7 +3,7 @@
 Web application to view and create timetables. 
 Implemented connection to the database (postgresSQL).
 ## Main page
-<img width="564" alt="index" src="https://user-images.githubusercontent.com/22415059/68318082-7da46980-00bc-11ea-97f8-780e06a25fc4.PNG">
+<img width="564" alt="index" src="https://user-images.githubusercontent.com/22415059/68342141-3d5be000-00ea-11ea-9325-81a496958afc.PNG">
 
 ## add course
 <img width="772" alt="add" src="https://user-images.githubusercontent.com/22415059/68312686-b855d400-00b3-11ea-888f-b5a3748b5409.PNG">
