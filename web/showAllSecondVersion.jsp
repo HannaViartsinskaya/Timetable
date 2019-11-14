@@ -1,6 +1,8 @@
 <%@ page import="com.mvc.bean.TimetableBean" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.mvc.constants.Eng"%>
+<%@ page import="com.mvc.constants.Pln"%><%--
   Created by IntelliJ IDEA.
   User: verti
   Date: 04.11.2019
@@ -18,12 +20,23 @@
 
 </head>
 <body>
+<%String language=(String)session.getAttribute("selectedLanguage");
+
+    String namePageShowTimetableForGroup = "All courses for group";
+    if(language!=null){
+        if(language.equals("en")){
+            namePageShowTimetableForGroup=Eng.namePageShowTimetableForGroup;
+        }else {
+            namePageShowTimetableForGroup=Pln.namePageShowTimetableForGroup;
+        }
+    }
+%>
 <div class="breadcrumbs">
     <a href="index.jsp">Main</a>
     <a class="active" href="showAllSecondVersion.jsp">Timetable</a>
 
 </div>
-<h1>Wszystkie zajecia dla grupy ${groupN}
+<h1><%=namePageShowTimetableForGroup%>  ${groupN}
 </h1>
 
 <table id="timetable2">

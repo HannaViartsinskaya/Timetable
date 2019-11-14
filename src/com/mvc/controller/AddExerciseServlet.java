@@ -26,6 +26,7 @@ public class AddExerciseServlet extends HttpServlet {
 
         if(resultOfInsertionToDB.equals("SUCCESS"))
         {
+            request.setAttribute("message","The course was added");
             request.getRequestDispatcher("/index.jsp").forward(request, response);
         }
         else

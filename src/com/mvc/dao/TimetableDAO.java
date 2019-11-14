@@ -174,5 +174,25 @@ public class TimetableDAO {
         return times;
     }
 
+    public String deleteAllCoursesForGroup(String groupName){
+        String group=groupName;
+        Connection con = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            con = DBConnection.createConnection();
+            String query = "delete from lectures where groupName=?";
+            preparedStatement = con.prepareStatement(query);
+            preparedStatement.setString(1, group);
+            int i = preparedStatement.executeUpdate();
+            if (i != 0)
+                return "SUCCESS";
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return "Oops.. Something went wrong there with deleting!";
+    }
+
     }
 

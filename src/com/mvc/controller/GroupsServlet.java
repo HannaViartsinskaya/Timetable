@@ -79,6 +79,10 @@ public class GroupsServlet extends HttpServlet {
             request.setAttribute("tSunday",timetableSunday);
             request.getRequestDispatcher("/showAllSecondVersion.jsp").forward(request, response);
         }
+        else{
+            request.setAttribute("message","The data didn't find");
+            request.getRequestDispatcher("/index.jsp").forward(request,response);
+        }
 
     }
 

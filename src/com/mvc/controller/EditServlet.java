@@ -17,7 +17,7 @@ public class EditServlet extends HttpServlet {
         String timeBegin=request.getParameter("timeBegin");
         String timeEnd=request.getParameter("timeEnd");
         String dayName=request.getParameter("dayName");
-        String groupName = request.getParameter("groupListForAdd");
+        String groupName = request.getParameter("groupName");
         String subject=request.getParameter("subject");
         String teacher=request.getParameter("teacher");
         String lokal=request.getParameter("lokal");
@@ -36,7 +36,7 @@ public class EditServlet extends HttpServlet {
                 request.setAttribute("errMessage", resultOfEditionDB);
                 request.getRequestDispatcher("/editCourse.jsp").forward(request, response);
             }
-        }else if(request.getParameter("deliteB")!=null){
+        }else if(request.getParameter("deleteB")!=null){
             String resultOfDeliting=timetableDAO.deleteFromTable(timetableBean);
             if(resultOfDeliting.equals("SUCCESS"))
             {

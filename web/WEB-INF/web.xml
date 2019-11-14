@@ -49,15 +49,38 @@
         <servlet-name>PrintTimetableForTeacherServlet</servlet-name>
         <url-pattern>/PrintTimetableForTeacherServlet</url-pattern>
     </servlet-mapping>
-    EditCourseForTeacherServlet
+
     <servlet>
-        <description></description>
-        <display-name>EditCourseForTeacherServlet</display-name>
-        <servlet-name>EditCourseForTeacherServlet</servlet-name>
-        <servlet-class>com.mvc.controller.EditCourseForTeacherServlet</servlet-class>
-    </servlet>
+    <description></description>
+    <display-name>EditCourseForTeacherServlet</display-name>
+    <servlet-name>EditCourseForTeacherServlet</servlet-name>
+    <servlet-class>com.mvc.controller.EditCourseForTeacherServlet</servlet-class>
+</servlet>
     <servlet-mapping>
         <servlet-name>EditCourseForTeacherServlet</servlet-name>
         <url-pattern>/EditCourseForTeacherServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>LanguageServlet</display-name>
+        <servlet-name>LanguageServlet</servlet-name>
+        <servlet-class>com.mvc.controller.LanguageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LanguageServlet</servlet-name>
+        <url-pattern>/LanguageServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <description></description>
+        <display-name>DeleteAllForGroupServlet</display-name>
+        <servlet-name>DeleteAllForGroupServlet</servlet-name>
+        <servlet-class>com.mvc.controller.DeleteAllForGroupServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteAllForGroupServlet</servlet-name>
+        <url-pattern>/DeleteAllForGroupServlet</url-pattern>
     </servlet-mapping>
 </web-app>

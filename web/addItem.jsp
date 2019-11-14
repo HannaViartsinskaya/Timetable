@@ -1,3 +1,5 @@
+<%@ page import="com.mvc.constants.Eng"%>
+<%@ page import="com.mvc.constants.Pln"%>
 <%--
   Created by IntelliJ IDEA.
   User: verti
@@ -51,22 +53,57 @@
     </script>
 </head>
 <body>
+<%String language=(String)session.getAttribute("selectedLanguage");
+
+    String timeB = "Time begin (format HH:MM)";
+    String timeE = "Time end (format HH:MM)";
+    String day = "Day";
+    String group = "Group";
+    String subject = "Subject ";
+    String teacher = "Teacher ";
+    String lokal = "Room";
+    String namePageAdd = "All courses for group";
+    if(language!=null){
+        if(language.equals("en")){
+
+            timeB=Eng.timeB;
+            timeE=Eng.timeE;
+            day=Eng.day;
+            group=Eng.group;
+            subject=Eng.subject;
+            teacher=Eng.teacher;
+            lokal=Eng.lokal;
+            namePageAdd =Eng.namePageAdd;
+        }else {
+
+            timeB=Pln.timeB;
+            timeE=Pln.timeE;
+            day=Pln.day;
+            group=Pln.group;
+            subject=Pln.subject;
+            teacher=Pln.teacher;
+            lokal=Pln.lokal;
+            namePageAdd =Pln.namePageAdd;
+        }
+    }
+%>
 <div class="breadcrumbs">
     <a href="index.jsp">Main</a>
     <a class="active" href="addItem.jsp">Add course</a>
 </div>
+<h1><%=namePageAdd%></h1>
         <form name="form" action="AddExerciseServlet" method="post" onsubmit="return validate()">
             <table align="center">
             <tr>
-            <td>Time begin</td>
+            <td><%=timeB%></td>
         <td><input type="text" name="timeBegin" /></td>
             </tr>
             <tr>
-            <td>Time end</td>
+            <td><%=timeE%></td>
             <td><input type="text" name="timeEnd" /></td>
             </tr>
             <tr>
-            <td>Day</td>
+            <td><%=day%></td>
             <td>
                 <select  name="dayName" id="dayName">
                     <option>Saturday</option>
@@ -82,7 +119,7 @@
 
 
                 <tr>
-                    <td>Group</td>
+                    <td><%=group%></td>
                     <td>
                         <select  name="groupListForAdd" id="groupListForAdd">
                             <option>infromatyka(1semestr)</option>
@@ -104,15 +141,15 @@
 
 
             <tr>
-            <td>Subject</td>
+            <td><%=subject%></td>
             <td><input type="text" name="subject" /></td>
             </tr>
             <tr>
-            <td>Teacher</td>
+            <td><%=teacher%></td>
             <td><input type="text" name="teacher" /></td>
             </tr>
             <tr>
-            <td>Lokal</td>
+            <td><%=lokal%></td>
             <td><input type="text" name="lokal" /></td>
             </tr>
             <tr>

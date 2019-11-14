@@ -1,6 +1,8 @@
 <%@ page import="com.mvc.bean.TimetableBean" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.mvc.constants.Eng"%>
+<%@ page import="com.mvc.constants.Pln"%><%--
   Created by IntelliJ IDEA.
   User: verti
   Date: 01.11.2019
@@ -14,14 +16,53 @@
     <style>
         <%@include file='/resources/style.css' %>
     </style>
+
 </head>
 <body>
+<%String language=(String)session.getAttribute("selectedLanguage");
+    String aCoursesForGr="All courses for group";
+    String messageEditCourse="Click twice on line, whose data you want to change";
+    String timeB = "Time begin (format HH:MM)";
+    String timeE = "Time end (format HH:MM)";
+    String day = "Day";
+    String group = "Group";
+    String subject = "Subject ";
+    String teacher = "Teacher ";
+    String lokal = "Room";
+    String namePage = "All courses for group ";
+    if(language!=null){
+        if(language.equals("en")){
+            aCoursesForGr=Eng.getTimetable;
+            messageEditCourse=Eng.messageEditCourse;
+            timeB=Eng.timeB;
+            timeE=Eng.timeE;
+            day=Eng.day;
+            group=Eng.group;
+            subject=Eng.subject;
+            teacher=Eng.teacher;
+            lokal=Eng.lokal;
+            namePage=Eng.namePage;
+        }else {
+            aCoursesForGr=Pln.getTimetable;
+            messageEditCourse=Pln.messageEditCourse;
+            timeB=Pln.timeB;
+            timeE=Pln.timeE;
+            day=Pln.day;
+            group=Pln.group;
+            subject=Pln.subject;
+            teacher=Pln.teacher;
+            lokal=Pln.lokal;
+            namePage=Pln.namePage;
+        }
+    }
+%>
+
 <div class="breadcrumbs">
     <a href="index.jsp">Main</a>
     <a href="showAllSecondVersion.jsp">Timetable</a>
     <a class="active" href="editCourse.jsp">Edit course</a>
 </div>
-<h1>All courses for group ${groupN}</h1>
+<h1 class="lang" key="namePage"><%=aCoursesForGr%> ${groupN}</h1>
 
 <table id="timetable1">
     <%
@@ -182,7 +223,17 @@
 
     }
 </script>
-<h3>Click twice on line, whose data you want to change</h3>
+<form name="formDel" action="DeleteAllForGroupServlet" method="post">
+    <table align="center" >
+        <tr style="display:none;">
+            <td>gropName</td>
+            <td><input type="text" name="groupN" id="groupN"  readonly="readonly" value=${group}/></td>
+        </tr>
+            <td><input type="submit" name="deleteAll" value="Delete all"></input></td>
+        </tr>
+    </table>
+</form>
+<h3><%=messageEditCourse%></h3>
 <form name="form" action="EditServlet" method="post" onsubmit="return validate()" >
     <table align="center" id="hiddTable" style="display: none">
 
@@ -191,15 +242,15 @@
             <td><input type="text" name="idCourse" id="idCourse"  readonly="readonly"/></td>
         </tr>
         <tr>
-            <td>Time begin</td>
+            <td ><%=timeB%></td>
             <td><input type="text" name="timeBegin" id="timeBegin"/></td>
         </tr>
         <tr>
-            <td>Time end</td>
+            <td ><%=timeE%></td>
             <td><input type="text" name="timeEnd" id="timeEnd" /></td>
         </tr>
         <tr>
-            <td>Day</td>
+            <td ><%=day%></td>
             <td>
                 <select  name="dayName" id="dayName">
                     <option>Saturday</option>
@@ -213,33 +264,33 @@
             </td>
         </tr>
         <tr>
-            <td>Group</td>
+            <td ><%=group%></td>
             <td><input type="text" name="groupName" id="groupName" readonly="readonly"/></td>
         </tr>
 
         <tr>
-            <td>Subject</td>
+            <td ><%=subject%></td>
             <td><input type="text" name="subject" id="subject"/></td>
         </tr>
         <tr>
-            <td>Teacher</td>
+            <td ><%=teacher%></td>
             <td><input type="text" name="teacher" id="teacher" /></td>
         </tr>
         <tr>
-            <td>Lokal</td>
+            <td ><%=lokal%></td>
             <td><input type="text" name="lokal" id="lokal"/></td>
         </tr>
         <tr>
             <td></td>
             <td><input type="submit" name="editB" value="Edit"></input><input
-                    type="reset" value="Reset"></input><input type="submit" name="deliteB" value="Delite"></input></td>
+                    type="reset" value="Reset"></input><input type="submit" name="deleteB" value="Delete"></input></td>
         </tr>
 
     </table>
     <h3><%=(request.getAttribute("errMessage") == null) ? ""
                    : request.getAttribute("errMessage")%></h3>
 
-    <h3><%=(request.getAttribute("Message") == null) ? ""
+    <h3 id="succesMessage"><%=(request.getAttribute("Message") == null) ? ""
             : request.getAttribute("Message")%></h3>
 </form>
 </body>
