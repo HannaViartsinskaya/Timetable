@@ -14,13 +14,19 @@
     <style>
       <%@include file='/resources/style.css' %>
     </style>
-
+      <script>
+          function validate()
+          {
+              if(document.getElementById('teacher').value==''){
+                  alert('the field teacher should not remain empty');
+                  return false;
+              }
+          }
+      </script>
   </head>
   <body>
   <form class="formL" action="LanguageServlet" method="post">
       <div class="dtranslate">
-
-
           <input type="submit"  id="en" class="translate" name="en" value="en"></input>
           <input type="submit"  id="pl" class="translate" name="pl" value="pl"></input>
 
@@ -78,12 +84,12 @@
 </div>
   </form>
   <h2 ><%=getTimetableT%></h2>
-  <form class="form" action="PrintTimetableForTeacherServlet" method="post">
+  <form class="form" action="PrintTimetableForTeacherServlet" method="post"  onsubmit="return validate()">
       <div id="alignSelect">
       <table id="indexPage">
           <tr>
               <td><h3 ><%=teacherN%></h3></td>
-              <td><input type="text" name="teacher" id="teacher"></td>
+              <td><input type="text" name="teacher" id="teacher" ></td>
               <td ><button class="indBtn"  type="submit" name="SendTeacher" >OK</button></td>
           </tr>
       </table>

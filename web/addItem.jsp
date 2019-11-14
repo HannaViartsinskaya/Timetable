@@ -96,11 +96,11 @@
             <table align="center">
             <tr>
             <td><%=timeB%></td>
-        <td><input type="text" name="timeBegin" /></td>
+        <td><input type="text" name="timeBegin" pattern="([01]?[0-9]{1}|2[0-3]{1}):[0-5]{1}[0-9]{1}" /></td>
             </tr>
             <tr>
             <td><%=timeE%></td>
-            <td><input type="text" name="timeEnd" /></td>
+            <td><input type="text" name="timeEnd"  pattern="([01]?[0-9]{1}|2[0-3]{1}):[0-5]{1}[0-9]{1}"/></td>
             </tr>
             <tr>
             <td><%=day%></td>
@@ -138,9 +138,7 @@
 
                     </td>
                 </tr>
-
-
-            <tr>
+     <tr>
             <td><%=subject%></td>
             <td><input type="text" name="subject" /></td>
             </tr>

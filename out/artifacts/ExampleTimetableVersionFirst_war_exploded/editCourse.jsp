@@ -184,6 +184,42 @@
     // function myFunction(x) {
     //     alert("Row index is: " + x.rowIndex);
     // }
+    function validate()
+    {
+        var timeBegin = document.form.timeBegin.value;
+        var timeEnd = document.form.timeEnd.value;
+        var dayName = document.form.dayName.value;
+        var subject = document.form.subject.value;
+        var teacher = document.form.teacher.value;
+        var lokal = document.form.lokal.value;
+        if (timeBegin==null || timeBegin=="" || timeEnd==null || timeEnd=="")
+        {
+            alert("Time can't be blank");
+            return false;
+        }
+        else if (dayName==null || dayName=="")
+        {
+            alert("Day can't be blank");
+            return false;
+        }
+        else if (subject==null || subject=="")
+        {
+            alert("Subject can't be blank");
+            return false;
+        }
+        else if (teacher==null || teacher=="")
+        {
+            alert("Teacher can't be blank");
+            return false;
+        }
+        else if (lokal==null || lokal=="")
+        {
+            alert("Lokal can't be blank");
+            return false;
+        }
+
+    }
+
     function showTable(){
         document.getElementById("hiddTable").style.display = "block";
     }
