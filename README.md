@@ -1,5 +1,5 @@
 # Timetable
-######  Java EE, JSP, PostgresSQL, MVC, HTML/CSS, JavaScript
+######  Java EE, JSP, PostgreSQL, MVC, HTML/CSS, JavaScript
 Web application to view and create timetables. 
 Implemented connection to the database (postgresSQL).
 ## Main page
