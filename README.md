@@ -13,7 +13,6 @@ Implemented connection to the database (postgresSQL).
 
 <img width="707" alt="edit" src="https://user-images.githubusercontent.com/22415059/68845559-e5b20b80-06cb-11ea-8d0d-10704f1863b4.PNG">
 
-
 ## show all courses for teacher-> edit courses
 
 
